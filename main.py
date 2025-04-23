@@ -1,26 +1,5 @@
 """Дополнительную информацию про функции можно прочитать в файле README"""
-
-
-def add_expensive(amount: float, category: str, description: str = ""):
-    expensive = {
-        'amount': amount,
-        'category': category,
-        'description': description
-    }
-    expensive_list.append(expensive)
-
-
-def get_expensive():
-    return expensive_list
-
-
-def get_expensive_sum():
-    return sum(expense['amount'] for expense in expensive_list)
-
-
-def get_category(category: str):
-    """Заранее переводим всё в нижний регистр, чтобы не получать несоответствие при выводе"""
-    return [expensive for expensive in expensive_list if expensive['category'].lower() == category.lower()]
+from functions import add_expensive, get_expensive, get_expensive_sum, get_category
 
 
 def main():
@@ -76,6 +55,5 @@ def main():
             print("Неверный ввод. Выберите цифру от 1 до 5")
 
 
-expensive_list = []
 if __name__ == "__main__":
     main()
